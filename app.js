@@ -1,4 +1,4 @@
-﻿const REDIRECT_URI = 'http://192.168.0.101:8080/redirect.html';
+﻿const REDIRECT_URI = 'https://kuzy000.github.io/spotify-allist/redirect.html';
 const CLIENT_ID = '5212671b9f8b495ebfbf9e293ac4a91b';
 
 let accessToken = '';
@@ -175,9 +175,6 @@ loginButton.addEventListener('click', function () {
 		let user = await (await sfetch(token, '/v1/me')).json();
 		let artists = await (await sfetch(token, '/v1/me/following?type=artist&limit=1')).json();
 
-		console.log(user);
-		console.log(artists);
-
 		divLogin.style.display = 'none';
 		divMain.style.display = 'block';
 
@@ -198,8 +195,6 @@ runButton.addEventListener('click', async function () {
 	let user = await (await sfetch(token, '/v1/me')).json();
 
 	let artists = await getArtists(token);
-
-	console.log(artists);
 
 	let playlist = await (await createPlaylist(token, user.id, 'all ' + formatDate(new Date()))).json();
 
