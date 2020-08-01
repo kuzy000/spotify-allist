@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ALLIS(T|M)</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.1.0/fetch.min.js"></script>
+</head>
+<body>
+    <div id="content-outer">
+        <h1 class="center">ALLIS(T|M)</h1>
+        <div id="content-inner">
+            <div id="login">
+                <h2 class="center">кнопка чтоб плейлист со всеми треками всех подписок в спотифай</h2>
+                <!--
+                -->
+
+                <div class="w100 center">
+                    <button id="btn-login"><i class="fa fa-spotify" aria-hidden="true"></i> LOGIN</button>
+                </div>
+            </div>
+            <div id="main" style="display:none">
+                <div id="result"></div>
+                <script id="result-template" type="text/x-handlebars-template">
+                    <div class="avatar-container w100 center relative">
+                        <img class="avatar" src="{{images.0.url}}">
+                        <div class="center nickname">{{display_name}}</div>
+                    </div>
+                </script>
+                <div class="center" id="status"></div>
+                <div class="center" id="wait" style="display:none">Теперь жди (добавляется ~100 треков в секунду, иначе спотифай ЛОПНЕТ)</div>
+                <div class="w100 center">
+                    <button id="btn-run">КНОПКА</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
