@@ -216,5 +216,7 @@ runButton.addEventListener('click', async function () {
 	}
 
 	addTracks(token, playlist.id, [], state, true);
+
+	status('Ура!');
 });
 
